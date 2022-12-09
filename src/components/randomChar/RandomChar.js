@@ -3,13 +3,12 @@ import {Component} from 'react'
 import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
 import MarvelService from "../../services/MarvelService.js";
-import Spinner from "../spinner/spinner.js";
+import Spinner from "../spinner/Spinner.js";
 import ErrorMessage from "../errorMesage/ErrorMessage.js";
 
 class RandomChar extends Component {
   constructor(props) {
     super(props);
-    this.updateChar()
   }
 
   state = {
