@@ -12,10 +12,10 @@ const App = () => {
         <AppHeader />
         <main >
           <Switch >
-            <Route exact path="/" >
+            <Route exact path="/Marvel" >
               <MainPage/>
             </Route >
-            <Route exact path="/comics">
+            <Route exact path="/Marvel/comics">
               <ComicsPage/>
             </Route >
           </Switch >

@@ -6,7 +6,7 @@ const AppHeader = () => {
   return (
     <header className="app__header" >
       <h1 className="app__title" >
-        <Link to="/" >
+        <Link to="/Marvel" >
           <span >Marvel</span > information portal
         </Link >
       </h1 >
@@ -15,7 +15,7 @@ const AppHeader = () => {
           <li >
             <NavLink
               exact
-              to="/"
+              to="/Marvel"
               activeStyle={{
                 'color': '#9F0013'
               }}
@@ -27,7 +27,7 @@ const AppHeader = () => {
           <li >
             <NavLink
               exact
-              to="/comics"
+              to="/Marvel/comics"
               activeStyle={{
                 'color': '#9F0013'
               }}
