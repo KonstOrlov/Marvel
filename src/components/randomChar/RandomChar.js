@@ -1,20 +1,19 @@
 import {useEffect, useState} from 'react'
 
-import './randomChar.scss';
-import mjolnir from '../../resources/img/mjolnir.png';
-import MarvelService from "../../services/MarvelService.js";
 import Spinner from "../spinner/Spinner.js";
 import ErrorMessage from "../errorMesage/ErrorMessage.js";
+import useMarvelService from "../../services/MarvelService.js";
+
+import './randomChar.scss';
+import mjolnir from '../../resources/img/mjolnir.png';
 
 const RandomChar = () => {
   const [char, setChar] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  const marvelService = new MarvelService();
+  const {loading, error, getCharacter, clearError} = useMarvelService();
 
   useEffect(() => {
     updateChar();
+
     const timerId = setInterval(updateChar, 15000);
 
     return () => {
@@ -24,25 +23,13 @@ const RandomChar = () => {
 
   const onCharLoaded = (char) => {
     setChar(char)
-    setLoading(false)
-  }
-
-  const onCharLoading = () => {
-    setLoading(true)
-  }
-
-  const onError = () => {
-    setLoading(false)
-    setError(true)
   }
 
   const updateChar = () => {
+    clearError();
     const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
-    onCharLoading();
-    marvelService
-      .getCharacter(id)
+    getCharacter(id)
       .then(onCharLoaded)
-      .catch(onError)
   }
 
   const errorMessage = error ? <ErrorMessage /> : null;
@@ -72,32 +59,36 @@ const RandomChar = () => {
 }
 
 const View = ({char}) => {
-  const {name, description, thumbnail, homepage, wiki} = char;
-  let imgStyle = {'objectFit': 'cover'};
-  if (thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
-    imgStyle = {'objectFit': 'contain'};
-  }
+  if (char) {
+    const {name, description, thumbnail, homepage, wiki} = char;
 
+    let imgStyle = {'objectFit': 'cover'};
+    if (thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
+      imgStyle = {'objectFit': 'contain'};
+    }
 
-  return (
-    <div className="randomchar__block" >
-      <img src={thumbnail} alt="Random character" className="randomchar__img" style={imgStyle} />
-      <div className="randomchar__info" >
-        <p className="randomchar__name" >{name}</p >
-        <p className="randomchar__descr" >
-          {description}
-        </p >
-        <div className="randomchar__btns" >
-          <a href={homepage} target="_blank" className="button button__main" >
-            <div className="inner" >homepage</div >
-          </a >
-          <a href={wiki} target="_blank" className="button button__secondary" >
-            <div className="inner" >Wiki</div >
-          </a >
+    return (
+      <div className="randomchar__block" >
+        <img src={thumbnail} alt="Random character" className="randomchar__img" style={imgStyle} />
+        <div className="randomchar__info" >
+          <p className="randomchar__name" >{name}</p >
+          <p className="randomchar__descr" >
+            {description}
+          </p >
+          <div className="randomchar__btns" >
+            <a href={homepage} className="button button__main" >
+              <div className="inner" >homepage</div >
+            </a >
+            <a href={wiki} className="button button__secondary" >
+              <div className="inner" >Wiki</div >
+            </a >
+          </div >
         </div >
       </div >
-    </div >
-  )
+    )
+  }
+
+  return null;
 }
 
 export default RandomChar;
