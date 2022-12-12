@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/Marvel/static/css/main.e4e6ec41.chunk.css",
-    "main.js": "/Marvel/static/js/main.568c92bf.chunk.js",
-    "main.js.map": "/Marvel/static/js/main.568c92bf.chunk.js.map",
+    "main.css": "/Marvel/static/css/main.824dbdca.chunk.css",
+    "main.js": "/Marvel/static/js/main.1ba23191.chunk.js",
+    "main.js.map": "/Marvel/static/js/main.1ba23191.chunk.js.map",
     "runtime-main.js": "/Marvel/static/js/runtime-main.21c96f96.js",
     "runtime-main.js.map": "/Marvel/static/js/runtime-main.21c96f96.js.map",
-    "static/js/2.3c8babee.chunk.js": "/Marvel/static/js/2.3c8babee.chunk.js",
-    "static/js/2.3c8babee.chunk.js.map": "/Marvel/static/js/2.3c8babee.chunk.js.map",
+    "static/js/2.2c9317fb.chunk.js": "/Marvel/static/js/2.2c9317fb.chunk.js",
+    "static/js/2.2c9317fb.chunk.js.map": "/Marvel/static/js/2.2c9317fb.chunk.js.map",
     "index.html": "/Marvel/index.html",
-    "static/css/main.e4e6ec41.chunk.css.map": "/Marvel/static/css/main.e4e6ec41.chunk.css.map",
-    "static/js/2.3c8babee.chunk.js.LICENSE.txt": "/Marvel/static/js/2.3c8babee.chunk.js.LICENSE.txt",
+    "static/css/main.824dbdca.chunk.css.map": "/Marvel/static/css/main.824dbdca.chunk.css.map",
+    "static/js/2.2c9317fb.chunk.js.LICENSE.txt": "/Marvel/static/js/2.2c9317fb.chunk.js.LICENSE.txt",
+    "static/media/Avengers.4065c8f9.png": "/Marvel/static/media/Avengers.4065c8f9.png",
+    "static/media/Avengers_logo.9eaf2193.png": "/Marvel/static/media/Avengers_logo.9eaf2193.png",
+    "static/media/UW.422636b4.png": "/Marvel/static/media/UW.422636b4.png",
     "static/media/error.42292aa1.gif": "/Marvel/static/media/error.42292aa1.gif",
     "static/media/mjolnir.61f31e18.png": "/Marvel/static/media/mjolnir.61f31e18.png",
-    "static/media/vision.067d4ae1.png": "/Marvel/static/media/vision.067d4ae1.png"
+    "static/media/vision.067d4ae1.png": "/Marvel/static/media/vision.067d4ae1.png",
+    "static/media/x-men.41b39e19.png": "/Marvel/static/media/x-men.41b39e19.png"
   },
   "entrypoints": [
     "static/js/runtime-main.21c96f96.js",
-    "static/js/2.3c8babee.chunk.js",
-    "static/css/main.e4e6ec41.chunk.css",
-    "static/js/main.568c92bf.chunk.js"
+    "static/js/2.2c9317fb.chunk.js",
+    "static/css/main.824dbdca.chunk.css",
+    "static/js/main.1ba23191.chunk.js"
   ]
 }
