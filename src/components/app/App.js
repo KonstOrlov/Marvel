@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
-import {MainPage, ComicsPage} from "../pages/index.js"
+import {MainPage, ComicsPage, Page404, SingleComicPage} from "../pages/index.js"
 
 import AppHeader from "../appHeader/AppHeader";
 
@@ -12,8 +12,10 @@ const App = () => {
         <AppHeader />
         <main >
           <Routes >
-            <Route path="/Marvel" element={<MainPage/>} />
+            <Route path="/Marvel" element={<MainPage />} />
             <Route path="/Marvel/comics" element={<ComicsPage />} />
+            <Route path="/Marvel/comics/:comicId" element={<SingleComicPage />} />
+            <Route path="*" element={<Page404 />} />
           </Routes >
         </main >
       </div >
