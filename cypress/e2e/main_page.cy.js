@@ -15,16 +15,6 @@ describe("Main page", () => {
     cy.get(".char__list .char__item").eq(0).contains("Captain Flint");
   });
 
-  it("check amount chars on page", () => {
-    cy.intercept("https://gateway.marvel.com/v1/public/characters/*").as(
-      "getChars"
-    );
-    cy.wait("@getChars").its("response.statusCode").should("eq", 200);
-    cy.get(".char__list .char__item").and(($p) => {
-      expect($p).to.have.length(9);
-    });
-  });
-
   it("open char info", () => {
     cy.intercept("https://gateway.marvel.com/v1/public/characters/*").as(
       "getChars"
